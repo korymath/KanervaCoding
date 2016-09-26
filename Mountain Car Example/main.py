@@ -26,7 +26,7 @@ returnSum = 0.0
 
 k = vcck(n,2)
 
-fig, ax = plt.subplots()
+# fig, ax = plt.subplots()
 
 prototypePlot, acrl = {}, {}
 
@@ -52,7 +52,6 @@ acrl = ACRL()
 
 def setupPlot():
 	global x, y, t, prototypePlot
-
 	prototypePlot = ax.scatter(x, y, c=t, s=10, animated=True, cmap = plt.matplotlib.cm.jet)
 	ax.axis=([-1.5, .8, -.1, .1])
 	return prototypePlot,
@@ -200,7 +199,8 @@ def loop():
 
 if __name__ == '__main__':
 
-	ani = animation.FuncAnimation(fig, updatePlot, interval=1, init_func=setupPlot, blit=True)
+
+	ani = animation.FuncAnimation(fig, updatePlot, interval=1, init_func=setupPlot, blit=False)
 	plt.show()
 
 	print "Average return:", returnSum/numEpisodes
